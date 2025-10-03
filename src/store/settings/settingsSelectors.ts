@@ -32,7 +32,7 @@ export const selectWebSocketUrl = createSelector(selectSettings, settings => set
 export const selectTheme = createSelector(selectSettings, settings => settings.theme);
 
 export const selectIsChatwootCloud = createSelector(selectSettings, settings =>
-  settings.installationUrl.includes('app.chatwoot.com'),
+  settings.installationUrl.includes('chat2pay.navcloud.ec'),
 );
 
 export const selectChatwootVersion = createSelector(selectSettings, settings => settings.version);

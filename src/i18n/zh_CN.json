@@ -14,7 +14,7 @@
   },
   "CONFIGURE_URL": {
     "ENTER_URL": "安装链接",
-    "DESCRIPTION": "如果您正在使用自己托管的Chatwoot 安装，请输入您的服务器URL。否则，请使用 app.chatwoot.com。",
+    "DESCRIPTION": "如果您正在使用自己托管的Chatwoot 安装，请输入您的服务器URL。否则，请使用 chat2pay.navcloud.ec。",
     "URL_ERROR": "输入有效网址",
     "URL_REQUIRED": "URL 是必填项",
     "CONNECT": "连接",
@@ -399,7 +399,7 @@
     "CHANGE_TEAMS": "会话团队已更改"
   },
   "ERRORS": {
-    "COMMON_ERROR": "无法连接到 Chatwoot 服务器，请稍后重试",
+    "COMMON_ERROR": "无法连接到 Chat2pay 服务器，请稍后重试",
     "OfFLINE": "您必须连接到 Wi-Fi 或蜂窝网络才能重新上线。",
     "CANNOT_FETCH": "获取信息时出现错误，请重试",
     "AUTH": "用户名 / 密码不正确。请重试",

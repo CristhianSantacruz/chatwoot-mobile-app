@@ -14,7 +14,7 @@
   },
   "CONFIGURE_URL": {
     "ENTER_URL": "URL dell'installazione",
-    "DESCRIPTION": "Se stai usando un'installazione di Chatwoot auto-ospitata, inserisci l'URL del tuo server. Altrimenti, usa app.chatwoot.com.",
+    "DESCRIPTION": "Se stai usando un'installazione di Chat2pay auto-ospitata, inserisci l'URL del tuo server. Altrimenti, usa chat2pay.navcloud.ec.",
     "URL_ERROR": "Inserisci un URL valido",
     "URL_REQUIRED": "URL obbligatorio",
     "CONNECT": "Connetti",
@@ -399,7 +399,7 @@
     "CHANGE_TEAMS": "Team conversazione cambiato"
   },
   "ERRORS": {
-    "COMMON_ERROR": "Could not connect to Chatwoot Server, Please try again later",
+    "COMMON_ERROR": "Could not connect to Chat2pay Server, Please try again later",
     "OfFLINE": "Devi connetterti al Wi-Fi o a una rete cellulare per tornare online",
     "CANNOT_FETCH": "Si è verificato un errore nel recupero delle informazioni, si prega di riprovare",
     "AUTH": "Nome utente / Password non corretta. Si prega di riprovare",
@@ -410,8 +410,8 @@
   },
   "SERVER_UPGRADE": {
     "TITLE": "Aggiornamento del server richiesto",
-    "WARNING_FOR_AGENT": "Sembra che tu stia usando il server Chatwoot non supportato per la tua app mobile. Contatta il tuo amministratore per aggiornare il tuo server Chatwoot.",
-    "WARNING_FOR_ADMIN": "Sembra che tu stia usando il server Chatwoot non supportato per la tua app mobile. È necessario aggiornare alla versione del server %{minimumVersion} o successivo."
+    "WARNING_FOR_AGENT": "Sembra che tu stia usando il server Chat2pay non supportato per la tua app mobile. Contatta il tuo amministratore per aggiornare il tuo server Chat2pay.",
+    "WARNING_FOR_ADMIN": "Sembra che tu stia usando il server Chat2pay non supportato per la tua app mobile. È necessario aggiornare alla versione del server %{minimumVersion} o successivo."
   },
   "EXIT": {
     "TITLE": "Esci",

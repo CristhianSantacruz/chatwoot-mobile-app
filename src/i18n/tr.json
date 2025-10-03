@@ -14,7 +14,7 @@
   },
   "CONFIGURE_URL": {
     "ENTER_URL": "Kurulum URL'si",
-    "DESCRIPTION": "Kendi barındırdığınız bir Chatwoot kurulumu kullanıyorsanız, sunucu URL'nizi girin. Aksi takdirde app.chatwoot.com'u kullanın.",
+    "DESCRIPTION": "Kendi barındırdığınız bir Chat2pay kurulumu kullanıyorsanız, sunucu URL'nizi girin. Aksi takdirde chat2pay.navcloud.ec'u kullanın.",
     "URL_ERROR": "Geçerli bir URL girin",
     "URL_REQUIRED": "URL gereklidir",
     "CONNECT": "Bağlan",
@@ -399,7 +399,7 @@
     "CHANGE_TEAMS": "Görüşme takımı değişti"
   },
   "ERRORS": {
-    "COMMON_ERROR": "Chatwoot Sunucusuna bağlanılamadı, Lütfen daha sonra tekrar deneyin",
+    "COMMON_ERROR": "Chat2pay Sunucusuna bağlanılamadı, Lütfen daha sonra tekrar deneyin",
     "OfFLINE": "Tekrar çevrimiçi olmak için kablosuz ağa veya hücresel ağa bağlanmanız gerekir",
     "CANNOT_FETCH": "Bilgi alınırken bir hata oluştu, lütfen tekrar deneyin",
     "AUTH": "Kullanıcı Adı / Parola Yanlış. Lütfen tekrar deneyin",
@@ -410,8 +410,8 @@
   },
   "SERVER_UPGRADE": {
     "TITLE": "Sunucu yükseltmesi gerekiyor",
-    "WARNING_FOR_AGENT": "Görünüşe göre mobil uygulamanız için desteklenmeyen bir Chatwoot sunucusu kullanıyorsunuz. Lütfen Chatwoot sunucunuzu yükseltmek için sistem yöneticinizle iletişime geçin.",
-    "WARNING_FOR_ADMIN": "Görünüşe göre mobil uygulamanız için desteklenmeyen bir Chatwoot sunucusu kullanıyorsunuz. Sunucu sürümünü %{minimumVersion} veya daha yenisine yükseltmek gerekmektedir."
+    "WARNING_FOR_AGENT": "Görünüşe göre mobil uygulamanız için desteklenmeyen bir Chat2pay sunucusu kullanıyorsunuz. Lütfen Chat2pay sunucunuzu yükseltmek için sistem yöneticinizle iletişime geçin.",
+    "WARNING_FOR_ADMIN": "Görünüşe göre mobil uygulamanız için desteklenmeyen bir Chat2pay sunucusu kullanıyorsunuz. Sunucu sürümünü %{minimumVersion} veya daha yenisine yükseltmek gerekmektedir."
   },
   "EXIT": {
     "TITLE": "Çıkış",

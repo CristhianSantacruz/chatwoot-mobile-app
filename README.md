@@ -3,7 +3,7 @@
 
 ---
 
-# Chatwoot
+# Chat2pay
 
 Mobile app for chatwoot platform. Built with React Native and Expo.
 
@@ -16,7 +16,7 @@ Mobile app for chatwoot platform. Built with React Native and Expo.
  <img src="https://img.shields.io/github/license/chatwoot/chatwoot-mobile-app" alt="License">
 </p>
 
-- **Supported Chatwoot version:** 3.13.0+
+- **Supported Chat2pay version:** 3.13.0+
 - **Supported iOS versions**: 13.4+
 - **Supported Android versions**: 6.0+
 
@@ -37,7 +37,7 @@ Mobile app for chatwoot platform. Built with React Native and Expo.
     <img alt="Download on the App Store" title="App Store" src="http://i.imgur.com/0n2zqHD.png" width="140">
   </a>
 
-  <a href="https://play.google.com/store/apps/details?id=com.chatwoot.app&hl=en">
+  <a href="https://play.google.com/store/apps/details?id=com.chat2pay.app&hl=en">
     <img alt="Get it on Google Play" title="Google Play" src="http://i.imgur.com/mtGRPuM.png" width="140">
   </a>
 </p>
@@ -48,13 +48,13 @@ To help with testing app updates before they're released, you can:
 
 Sign up to be a beta tester
 
-- [Android](https://play.google.com/apps/testing/com.chatwoot.app) - Open this link from your Android device
+- [Android](https://play.google.com/apps/testing/com.chat2pay.app) - Open this link from your Android device
 - [iOS](https://testflight.apple.com/join/yQ4yoSx4) - Open this link from your iOS device
 
 You can leave the Beta testing program at any time:
 
-- On Android, [click this link](https://play.google.com/apps/testing/com.chatwoot.app) while logged in with your Google Play email address used to opt-in for the Beta program, then click **Leave the program**.
-- On iOS, access the `Chatwoot` app page in TestFlight and click **Stop Testing**.
+- On Android, [click this link](https://play.google.com/apps/testing/com.chat2pay.app) while logged in with your Google Play email address used to opt-in for the Beta program, then click **Leave the program**.
+- On iOS, access the `Chat2pay` app page in TestFlight and click **Stop Testing**.
 
 ## Feedback & Contributing
 
@@ -64,4 +64,4 @@ If you wish to contribute, please take a quick look at the [CONTRIBUTING.md](htt
 
 If there's anything you'd like to chat about, please feel free to join our [Discord](https://discord.gg/cJXdrwS) chat!
 
-_Chatwoot_ &copy; 2017-2025, Chatwoot Inc - Released under the MIT License.
+_Chatwoot_ &copy; 2017-2025, Chat2pay Inc - Released under the MIT License.

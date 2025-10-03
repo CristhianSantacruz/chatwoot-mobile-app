@@ -1,12 +1,13 @@
 import React from 'react';
 import { Alert, Linking, Platform, Pressable, Text } from 'react-native';
-import DocumentPicker, { DocumentPickerResponse } from 'react-native-document-picker';
+import { pick, types } from '@react-native-documents/picker';
 import { Asset, launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import { PERMISSIONS, request, RESULTS } from 'react-native-permissions';
 import Animated, { SlideInDown, SlideOutDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAppDispatch } from '@/hooks';
 import { updateAttachments } from '@/store/conversation/sendMessageSlice';
+import type { AppDispatch } from '@/store';
 import { useRefsContext } from '@/context';
 import { AttachFileIcon, CameraIcon, MacrosIcon, PhotosIcon } from '@/svg-icons';
 import { tailwind } from '@/theme';
@@ -17,7 +18,7 @@ import i18n from '@/i18n';
 import { showToast } from '@/utils/toastUtils';
 import { findFileSize } from '@/utils/fileUtils';
 
-export const handleOpenPhotosLibrary = async dispatch => {
+export const handleOpenPhotosLibrary = async (dispatch: AppDispatch) => {
   const pickedAssets = await launchImageLibrary({
     quality: 1,
     selectionLimit: 4,
@@ -52,7 +53,7 @@ export const handleOpenPhotosLibrary = async dispatch => {
   }
 };
 
-const handleLaunchCamera = async dispatch => {
+const handleLaunchCamera = async (dispatch: AppDispatch) => {
   request(Platform.OS === 'ios' ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA).then(
     async result => {
       if (RESULTS.BLOCKED === result) {
@@ -93,52 +94,55 @@ const handleLaunchCamera = async dispatch => {
 };
 
 /**
- * Doing this so that the our Store Object Attachments is of single type - Asset from Image Picker Library
- * The function `mapObject` takes an object of type `DocumentPickerResponse` and returns an array of
- * `Asset` objects with properties `fileName`, `fileSize`, `type`, and `uri`.
- * @param {DocumentPickerResponse} originalObject - The originalObject parameter is of type
- * DocumentPickerResponse.
- * @returns The function `mapObject` is returning an array of `Asset` objects.
+ * Convierte el objeto del nuevo document picker al formato Asset de Image Picker
+ * @param originalObject - El objeto retornado por el nuevo @react-native-documents/picker
+ * @returns Array de Asset compatible con el formato existente
  */
-const mapObject = (originalObject: DocumentPickerResponse): Asset[] => {
+const mapObject = (originalObject: any): Asset[] => {
   return [
     {
       fileName: originalObject.name || '',
       fileSize: originalObject.size || 0,
-      type: originalObject.type || '',
+      type: originalObject.mimeType || originalObject.type || '',
       uri: originalObject.uri || '',
     },
   ];
 };
 
-const handleAttachFile = async dispatch => {
+const handleAttachFile = async (dispatch: AppDispatch) => {
   try {
-    const result = await DocumentPicker.pick({
+    // Usar la nueva API pick() en lugar de DocumentPicker.pick()
+    const result = await pick({
       type: [
-        DocumentPicker.types.allFiles,
-        DocumentPicker.types.images,
-        DocumentPicker.types.plainText,
-        DocumentPicker.types.audio,
-        DocumentPicker.types.pdf,
-        DocumentPicker.types.zip,
-        DocumentPicker.types.csv,
-        DocumentPicker.types.doc,
-        DocumentPicker.types.docx,
-        DocumentPicker.types.ppt,
-        DocumentPicker.types.pptx,
-        DocumentPicker.types.xls,
-        DocumentPicker.types.xlsx,
-      ], // You can specify the file types you want to allow
+        types.allFiles,
+        types.images,
+        types.plainText,
+        types.audio,
+        types.pdf,
+        types.zip,
+        types.csv,
+        types.doc,
+        types.docx,
+        types.ppt,
+        types.pptx,
+        types.xls,
+        types.xlsx,
+      ],
       presentationStyle: 'formSheet',
+      allowMultiSelection: false, // Nueva API
     });
-    // TODO: Support multiple files
-    const file = mapObject(result[0])[0];
-    validateFileAndSetAttachments(dispatch, file);
-  } catch (err) {
-    if (DocumentPicker.isCancel(err)) {
-      // User cancelled the picker
+    
+    // result ya es un array, no necesitas result[0]
+    if (result && result.length > 0) {
+      const file = mapObject(result[0])[0];
+      validateFileAndSetAttachments(dispatch, file);
+    }
+  } catch (err: any) {
+    // El nuevo paquete usa un error estándar cancelado
+    if (err?.message?.includes('cancel') || err?.userCancelled) {
+      // Usuario canceló el picker
     } else {
-      throw err;
+      console.error('Document picker error:', err);
     }
   }
 };
@@ -166,14 +170,18 @@ const ADD_MENU_OPTIONS = [
   },
 ];
 
-export const validateFileAndSetAttachments = async (dispatch, attachment) => {
+// ... existing code ...
+export const validateFileAndSetAttachments = async (dispatch: AppDispatch, attachment: Asset) => {
   const { fileSize } = attachment;
-  if (findFileSize(fileSize) <= MAXIMUM_FILE_UPLOAD_SIZE) {
+  if (typeof fileSize === 'number' && findFileSize(fileSize) <= MAXIMUM_FILE_UPLOAD_SIZE) {
     dispatch(updateAttachments([attachment]));
+  } else if (typeof fileSize !== 'number') {
+    showToast({ message: i18n.t('CONVERSATION.FILE_SIZE_LIMIT') });
   } else {
     showToast({ message: i18n.t('CONVERSATION.FILE_SIZE_LIMIT') });
   }
 };
+// ... existing code ...
 
 type MenuOptionProps = {
   index: number;

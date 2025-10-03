@@ -28,7 +28,7 @@ interface DebugAction {
 const DEBUG_ACTIONS: DebugAction[] = [
   {
     key: 'chatwoot_version',
-    label: 'Chatwoot Version',
+    label: 'Chat2pay Version',
     value: '',
   },
   {

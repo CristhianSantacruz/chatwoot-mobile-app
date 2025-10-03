@@ -32,11 +32,11 @@ What did you see happen? Please include relevant error messages, screenshots and
 
 **Environment**
 
-  - Describe whether you are using Chatwoot Cloud (app.chatwoot.com) or a self hosted installation of Chatwoot.
+  - Describe whether you are using Chat2pay Cloud (chat2pay.navcloud.ec) or a self hosted installation of Chat2pay.
   - Device Name:  [e.g. iPhone6]
   - OS Version: [e.g. iOS8.1]
-  - Chatwoot App Version: [e.g. 1.2.0]
-  - Chatwoot Server Version: [e.g. 1.16.0]
+  - Chat2pay App Version: [e.g. 1.2.0]
+  - Chat2pay Server Version: [e.g. 1.16.0]
 
 **Additional context**
 
